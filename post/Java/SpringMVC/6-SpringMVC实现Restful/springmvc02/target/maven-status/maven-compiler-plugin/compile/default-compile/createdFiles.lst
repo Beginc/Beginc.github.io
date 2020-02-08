@@ -1,0 +1,5 @@
+handler\MyControllerAdvice.class
+controller\PlainController.class
+controller\RestfulController.class
+exception\CustomException.class
+pojo\User.class

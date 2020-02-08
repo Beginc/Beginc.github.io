@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="accountDao" class="dao.impl.AccountDaoImpl">
+    </bean>
+    <bean id="accountService" class="service.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"></property>
+    </bean>
+    <bean id="accountController" class="controller.AccountController">
+        <property name="accountService" ref="accountService"></property>
+    </bean>
+
+    <!--将增强类交给Spring管理-->
+    <bean id="logger" class="aop.Logger">
+    </bean>
+    <!--aop配置-->
+    <aop:config>
+        <!--切入点配置-->
+        <aop:pointcut id="accountServicePointcut" expression="execution(public void service.impl.AccountServiceImpl.transfer(int, int, int))"/>
+        <!--增强配置-->
+        <aop:aspect id="loggerAdvice" ref="logger">
+<!--            <aop:before method="before" pointcut-ref="accountServicePointcut"></aop:before>-->
+<!--            <aop:after method="after" pointcut-ref="accountServicePointcut"></aop:after>-->
+<!--            <aop:after-returning method="afterReturning" pointcut-ref="accountServicePointcut"></aop:after-returning>-->
+<!--            <aop:after-throwing method="afterThrowing" pointcut-ref="accountServicePointcut"></aop:after-throwing>-->
+            <aop:around method="around" pointcut-ref="accountServicePointcut"></aop:around>
+        </aop:aspect>
+    </aop:config>
+</beans>

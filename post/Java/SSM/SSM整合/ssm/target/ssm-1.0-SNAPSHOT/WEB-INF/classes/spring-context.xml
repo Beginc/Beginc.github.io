@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--引入JDBC配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--开启注解扫描-->
+    <context:component-scan base-package="cn.edu.njust">
+        <!--不扫描Contoller，让SpringMVC扫描-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    <!--整合MyBatis-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation" value="classpath:mybatis.xml"></property>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.edu.njust.dao"></property>
+    </bean>
+    <!--事务控制-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <tx:advice id="generalTransactionAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="find*" read-only="true"></tx:method>
+            <tx:method name="insert*" isolation="DEFAULT"></tx:method>
+            <tx:method name="update*" isolation="DEFAULT"></tx:method>
+            <tx:method name="delete*" isolation="DEFAULT"></tx:method>
+            <tx:method name="save*" isolation="DEFAULT"></tx:method>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <!--业务层所有方法加上事务-->
+        <aop:pointcut id="generalPointcut" expression="execution(* cn.edu.njust.service.impl.*.*(..))"/>
+        <aop:advisor advice-ref="generalTransactionAdvice" pointcut-ref="generalPointcut"></aop:advisor>
+    </aop:config>
+
+</beans>

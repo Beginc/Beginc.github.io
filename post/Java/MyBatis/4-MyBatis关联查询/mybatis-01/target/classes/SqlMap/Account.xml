@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.AccountMapper">
+
+    <resultMap id="accountMap" type="pojo.Account">
+        <id column="id" property="id"/>
+        <result column="money" property="money"/>
+
+        <association column="uid" property="user" javaType="pojo.User" select="mapper.UserMapper.find" fetchType="eager">
+        </association>
+    </resultMap>
+    <sql id="selectAllAttr">
+        select * from account
+    </sql>
+    <select id="findAll" resultMap="accountMap">
+        <include refid="selectAllAttr"/>
+    </select>
+
+    <select id="find" resultMap="accountMap">
+        select * from account where id = #{id}
+    </select>
+
+    <delete id="delete">
+        delete from account where id = #{id}
+    </delete>
+
+    <update id="update">
+        update account set
+        uid = #{uid}, money = #{money}
+        where id = #{id}
+    </update>
+
+    <insert id="save">
+        insert into account
+        (uid, money) values
+        (#{uid}, #{money})
+
+        <selectKey keyProperty="id" keyColumn="id" resultType="Integer">
+            select LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <select id="findByUID" parameterType="Integer" resultMap="accountMap">
+        select * from account where uid = #{uid}
+    </select>
+</mapper>

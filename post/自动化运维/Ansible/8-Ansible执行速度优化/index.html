@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>7-Ansible执行速度优化 - Codeband</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="https://beginc.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/Ansible/8-Ansible%E6%89%A7%E8%A1%8C%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<meta name="description" content="优化一：开启SSH长连接Ansible使用SSH和远程主机进行通信, 所以Ansible对SSH的依赖性非常强, 在OpenSSH 5.6版本以后SSH就支持了Multiplexing。所以如果Ansible中被控端的SSH 版本高于5.6时, 我们可以直接在ansible.cfg文件中设置SSH长连接。 123[ssh_connection]# ControlPersist&#x3D;5d意思为SSH长连">
+<meta property="og:type" content="website">
+<meta property="og:title" content="7-Ansible执行速度优化">
+<meta property="og:url" content="https://beginc.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/Ansible/8-Ansible%E6%89%A7%E8%A1%8C%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:site_name" content="Codeband">
+<meta property="og:description" content="优化一：开启SSH长连接Ansible使用SSH和远程主机进行通信, 所以Ansible对SSH的依赖性非常强, 在OpenSSH 5.6版本以后SSH就支持了Multiplexing。所以如果Ansible中被控端的SSH 版本高于5.6时, 我们可以直接在ansible.cfg文件中设置SSH长连接。 123[ssh_connection]# ControlPersist&#x3D;5d意思为SSH长连">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="https://beginc.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/Ansible/8-Ansible%E6%89%A7%E8%A1%8C%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/Ansible/8-Ansible%E6%89%A7%E8%A1%8C%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/cover.png">
+<meta property="article:published_time" content="2020-02-07T13:24:27.000Z">
+<meta property="article:modified_time" content="2020-02-08T02:54:03.698Z">
+<meta property="article:author" content="Codeband">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://beginc.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/Ansible/8-Ansible%E6%89%A7%E8%A1%8C%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/Ansible/8-Ansible%E6%89%A7%E8%A1%8C%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/cover.png">
+
+
+<link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet">
+<link href="/styles.e4da61f53c7bc99becf4.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/theme.f900399fe578e73464e4.css">
+
+
+<script src="/config.194c1ea6b3fe34556d78.js"></script>
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body lang="en">
+<is-a></is-a>
+<script src="/runtime.ee6f73bc31187f12810a.js"></script>
+<script src="/polyfills.14df1390f4da8e838f05.js"></script>
+<script src="/main.d458ff11c3565b982fe7.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.UserMapper">
+
+    <sql id="selectAllAttr">
+        select * from user
+    </sql>
+    <select id="findAll" resultType="pojo.User">
+        <include refid="selectAllAttr"/>
+    </select>
+
+    <select id="find" resultType="pojo.User">
+        select * from user where id = #{id}
+    </select>
+
+    <delete id="delete">
+        delete from user where id = #{id}
+    </delete>
+
+    <update id="update">
+        update user set
+        username = #{username}, address = #{address}, sex = #{sex}, birthday = #{birthday}
+        where id = #{id}
+    </update>
+
+    <insert id="save">
+        insert into user
+        (username, address, sex, birthday) values
+        (#{username}, #{address}, #{sex}, #{birthday})
+
+        <selectKey keyProperty="id" keyColumn="id" resultType="Integer">
+            select LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <select id="findByUsernameOrSex" parameterType="pojo.User" resultType="pojo.User">
+        select * from user
+        <where>
+            <if test="username != null">
+                username = #{username}
+            </if>
+            <if test="sex != null">
+                and sex = #{sex}
+            </if>
+        </where>
+    </select>
+    
+    <select id="findInIDs" parameterType="list" resultType="pojo.User">
+        select * from user
+        <where>
+            <foreach collection="list" open="id in (" close=")" separator="," item="id">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+</mapper>

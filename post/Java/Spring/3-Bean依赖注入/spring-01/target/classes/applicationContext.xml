@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="date" class="java.util.Date"></bean>
+    <bean id="testBean" class="pojo.DITest">
+        <property name="basic" value="1"></property>
+        <property name="string" value="str"></property>
+        <property name="ref" ref="date"></property>
+        <property name="array">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="1"/>
+                <entry key="2">
+                    <value>2</value>
+                </entry>
+                <entry key="3" value="3"/>
+            </map>
+        </property>
+        <property name="prop">
+            <props>
+                <prop key="1">1</prop>
+                <prop key="2">2</prop>
+                <prop key="3">3</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="parent" class="pojo.DITest" abstract="true">
+        <property name="basic" value="1"></property>
+        <property name="string" value="str"></property>
+        <property name="ref" ref="date"></property>
+        <property name="array">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="1"/>
+                <entry key="2">
+                    <value>2</value>
+                </entry>
+                <entry key="3" value="3"/>
+            </map>
+        </property>
+        <property name="prop">
+            <props>
+                <prop key="1">1</prop>
+                <prop key="2">2</prop>
+                <prop key="3">3</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="child" class="pojo.DITest" parent="parent">
+        <property name="basic" value="2"></property>
+        <property name="array">
+            <array merge="true">
+                <value>4</value>
+                <value>5</value>
+                <value>6</value>
+            </array>
+        </property>
+    </bean>
+</beans>
