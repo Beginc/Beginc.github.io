@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>3-SQL优化之Explain - Codeband</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="https://beginc.github.io/post/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/3-SQL%E4%BC%98%E5%8C%96%E4%B9%8BExplain/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<meta name="description" content="Explain使用方法explain SQL语句，如explain select * from account   字段id该字段用于表示多张表被处理的顺序。 id相同 处理顺序由上至下。数据库小的表会优先处理，因为优先处理小表产生的中间表较小，占用内存少。     id不同 id越大越先被处理。   select_type表示查询的种类。 SIMPLE 简单查询，无子查询，无Union。   P">
+<meta property="og:type" content="website">
+<meta property="og:title" content="3-SQL优化之Explain">
+<meta property="og:url" content="https://beginc.github.io/post/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/3-SQL%E4%BC%98%E5%8C%96%E4%B9%8BExplain/index.html">
+<meta property="og:site_name" content="Codeband">
+<meta property="og:description" content="Explain使用方法explain SQL语句，如explain select * from account   字段id该字段用于表示多张表被处理的顺序。 id相同 处理顺序由上至下。数据库小的表会优先处理，因为优先处理小表产生的中间表较小，占用内存少。     id不同 id越大越先被处理。   select_type表示查询的种类。 SIMPLE 简单查询，无子查询，无Union。   P">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="https://beginc.github.io/post/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/3-SQL%E4%BC%98%E5%8C%96%E4%B9%8BExplain/post/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/3-SQL%E4%BC%98%E5%8C%96%E4%B9%8BExplain/cover.png">
+<meta property="article:published_time" content="2020-02-11T06:59:12.000Z">
+<meta property="article:modified_time" content="2020-02-11T13:24:32.032Z">
+<meta property="article:author" content="Codeband">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://beginc.github.io/post/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/3-SQL%E4%BC%98%E5%8C%96%E4%B9%8BExplain/post/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/3-SQL%E4%BC%98%E5%8C%96%E4%B9%8BExplain/cover.png">
+
+
+<link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet">
+<link href="/styles.e4da61f53c7bc99becf4.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/theme.f900399fe578e73464e4.css">
+
+
+<script src="/config.146f8de9955f6b1bad1d.js"></script>
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body lang="en">
+<is-a></is-a>
+<script src="/runtime.ee6f73bc31187f12810a.js"></script>
+<script src="/polyfills.14df1390f4da8e838f05.js"></script>
+<script src="/main.d458ff11c3565b982fe7.js"></script>
+</body>
+</html>
