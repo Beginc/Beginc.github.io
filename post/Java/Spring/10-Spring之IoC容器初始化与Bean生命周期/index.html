@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>10-Spring之IoC容器初始化与Bean生命周期 - Codeband</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="https://beginc.github.io/post/Java/Spring/10-Spring%E4%B9%8BIoC%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8EBean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<meta name="description" content="IoC容器初始化所以的步骤都在AbstractApplicationContext.refresh()方法中。   prepareRefresh记录启动时间 设置启动状态 加载Properties文件 obtainFreshBeanFactory创建BeanFactory(DefaultListableBeanFactory) 如果是XML一派的ApplicationContext的话还会在此处加">
+<meta property="og:type" content="website">
+<meta property="og:title" content="10-Spring之IoC容器初始化与Bean生命周期">
+<meta property="og:url" content="https://beginc.github.io/post/Java/Spring/10-Spring%E4%B9%8BIoC%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8EBean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/index.html">
+<meta property="og:site_name" content="Codeband">
+<meta property="og:description" content="IoC容器初始化所以的步骤都在AbstractApplicationContext.refresh()方法中。   prepareRefresh记录启动时间 设置启动状态 加载Properties文件 obtainFreshBeanFactory创建BeanFactory(DefaultListableBeanFactory) 如果是XML一派的ApplicationContext的话还会在此处加">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="https://beginc.github.io/post/Java/Spring/10-Spring%E4%B9%8BIoC%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8EBean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/post/Java/Spring/10-Spring%E4%B9%8BIoC%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8EBean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/cover.png">
+<meta property="article:published_time" content="2020-03-02T15:22:14.000Z">
+<meta property="article:modified_time" content="2020-03-03T05:44:01.048Z">
+<meta property="article:author" content="Codeband">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://beginc.github.io/post/Java/Spring/10-Spring%E4%B9%8BIoC%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8EBean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/post/Java/Spring/10-Spring%E4%B9%8BIoC%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8EBean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/cover.png">
+
+
+<link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet">
+<link href="/styles.e4da61f53c7bc99becf4.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/theme.f900399fe578e73464e4.css">
+
+
+<script src="/config.7e3aafd952973ea1724a.js"></script>
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body lang="en">
+<is-a></is-a>
+<script src="/runtime.ee6f73bc31187f12810a.js"></script>
+<script src="/polyfills.14df1390f4da8e838f05.js"></script>
+<script src="/main.d458ff11c3565b982fe7.js"></script>
+</body>
+</html>

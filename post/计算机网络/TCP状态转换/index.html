@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TCP状态转换 - Codeband</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="https://beginc.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<meta name="description" content="TCP状态转换图    TIME_WAIT作用在客户端发送了最后一个ACK挥手包后，会进入时长为2MSL（最大报文段生存时间，在网络传输中超过这个时间的报文段将被丢弃）的TIME_WAIT状态，之后再完全关闭连接，主要有以下两点原因 保证最后一个ACK挥手包被服务端接收到 最后一个ACK挥手包可能会发生丢失，若客户端发送完后直接进入关闭状态，则当服务端重发第三次FIN挥手包时，客户端会发生异常，直">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TCP状态转换">
+<meta property="og:url" content="https://beginc.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2/index.html">
+<meta property="og:site_name" content="Codeband">
+<meta property="og:description" content="TCP状态转换图    TIME_WAIT作用在客户端发送了最后一个ACK挥手包后，会进入时长为2MSL（最大报文段生存时间，在网络传输中超过这个时间的报文段将被丢弃）的TIME_WAIT状态，之后再完全关闭连接，主要有以下两点原因 保证最后一个ACK挥手包被服务端接收到 最后一个ACK挥手包可能会发生丢失，若客户端发送完后直接进入关闭状态，则当服务端重发第三次FIN挥手包时，客户端会发生异常，直">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="https://beginc.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2/cover.jpg">
+<meta property="article:published_time" content="2020-02-28T04:23:35.000Z">
+<meta property="article:modified_time" content="2020-02-29T16:14:21.972Z">
+<meta property="article:author" content="Codeband">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://beginc.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2/cover.jpg">
+
+
+<link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet">
+<link href="/styles.e4da61f53c7bc99becf4.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/theme.f900399fe578e73464e4.css">
+
+
+<script src="/config.7e3aafd952973ea1724a.js"></script>
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body lang="en">
+<is-a></is-a>
+<script src="/runtime.ee6f73bc31187f12810a.js"></script>
+<script src="/polyfills.14df1390f4da8e838f05.js"></script>
+<script src="/main.d458ff11c3565b982fe7.js"></script>
+</body>
+</html>

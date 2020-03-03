@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>I/O模型 - Codeband</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="https://beginc.github.io/post/Linux/IO%E6%A8%A1%E5%9E%8B/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<meta name="description" content="概念区分阻塞与非阻塞阻塞与非阻塞是对请求的发起者而言的 阻塞：请求未返回之前，发起者一直等待其返回，不做其他任何事情 非阻塞：请求发起后不等待其返回，就去做其他事情 举例 阻塞即买炒饭时老板没做好，你就一直等着，啥也不干 阻塞即买炒饭时告诉老板来一碗炒饭，之后你就开始玩手机，干其他事 同步与异步同步与异步是对请求的响应者而言的 同步：请求未处理完之前不返回响应 异步：请求接收到之后马上返回响应，之">
+<meta property="og:type" content="website">
+<meta property="og:title" content="I&#x2F;O模型">
+<meta property="og:url" content="https://beginc.github.io/post/Linux/IO%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Codeband">
+<meta property="og:description" content="概念区分阻塞与非阻塞阻塞与非阻塞是对请求的发起者而言的 阻塞：请求未返回之前，发起者一直等待其返回，不做其他任何事情 非阻塞：请求发起后不等待其返回，就去做其他事情 举例 阻塞即买炒饭时老板没做好，你就一直等着，啥也不干 阻塞即买炒饭时告诉老板来一碗炒饭，之后你就开始玩手机，干其他事 同步与异步同步与异步是对请求的响应者而言的 同步：请求未处理完之前不返回响应 异步：请求接收到之后马上返回响应，之">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="https://beginc.github.io/post/Linux/IO%E6%A8%A1%E5%9E%8B/post/Linux/IO%E6%A8%A1%E5%9E%8B/cover.jpg">
+<meta property="article:published_time" content="2020-02-27T13:22:16.000Z">
+<meta property="article:modified_time" content="2020-02-29T16:20:45.527Z">
+<meta property="article:author" content="Codeband">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://beginc.github.io/post/Linux/IO%E6%A8%A1%E5%9E%8B/post/Linux/IO%E6%A8%A1%E5%9E%8B/cover.jpg">
+
+
+<link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet">
+<link href="/styles.e4da61f53c7bc99becf4.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/theme.f900399fe578e73464e4.css">
+
+
+<script src="/config.7e3aafd952973ea1724a.js"></script>
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body lang="en">
+<is-a></is-a>
+<script src="/runtime.ee6f73bc31187f12810a.js"></script>
+<script src="/polyfills.14df1390f4da8e838f05.js"></script>
+<script src="/main.d458ff11c3565b982fe7.js"></script>
+</body>
+</html>

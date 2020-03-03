@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Redis之常见解决方案 - Codeband</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="https://beginc.github.io/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%B8%B8%E8%A7%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<meta name="description" content="缓存预热启动redis服务器时主动加载一些数据，减缓启动服务器时数据库的压力。 解决方法 根据统计结果加载热点数据 缓存雪崩问题在一个较短的时间内，缓存中较多的key集中过期，导致数据库被请求压垮。 解决多级缓存 Nginx缓存 + Redis缓存 + Ehcache缓存 服务限流降级 使用LRU缓存策略保留热点数据 过期时间使用固定时间 + 随机值 热点数据延时 缓存击穿问题单个热点数据过期的瞬">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Redis之常见解决方案">
+<meta property="og:url" content="https://beginc.github.io/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%B8%B8%E8%A7%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
+<meta property="og:site_name" content="Codeband">
+<meta property="og:description" content="缓存预热启动redis服务器时主动加载一些数据，减缓启动服务器时数据库的压力。 解决方法 根据统计结果加载热点数据 缓存雪崩问题在一个较短的时间内，缓存中较多的key集中过期，导致数据库被请求压垮。 解决多级缓存 Nginx缓存 + Redis缓存 + Ehcache缓存 服务限流降级 使用LRU缓存策略保留热点数据 过期时间使用固定时间 + 随机值 热点数据延时 缓存击穿问题单个热点数据过期的瞬">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="https://beginc.github.io/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%B8%B8%E8%A7%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%B8%B8%E8%A7%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/cover.png">
+<meta property="article:published_time" content="2020-03-02T07:57:10.000Z">
+<meta property="article:modified_time" content="2020-03-02T10:27:27.330Z">
+<meta property="article:author" content="Codeband">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://beginc.github.io/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%B8%B8%E8%A7%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%B8%B8%E8%A7%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/cover.png">
+
+
+<link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet">
+<link href="/styles.e4da61f53c7bc99becf4.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/theme.f900399fe578e73464e4.css">
+
+
+<script src="/config.7e3aafd952973ea1724a.js"></script>
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body lang="en">
+<is-a></is-a>
+<script src="/runtime.ee6f73bc31187f12810a.js"></script>
+<script src="/polyfills.14df1390f4da8e838f05.js"></script>
+<script src="/main.d458ff11c3565b982fe7.js"></script>
+</body>
+</html>
