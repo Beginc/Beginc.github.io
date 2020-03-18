@@ -8,16 +8,16 @@
 <link rel="canonical" href="https://beginc.github.io/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-<meta name="description" content="哨兵的作用监控Master存活检测 Slave存活检测  通知当被监控的主服务器出现问题时，向其他哨兵，客户端发送通知  自动故障转移断开Master与Slave的连接 投票选取新的Master 连接Slave到新的Master 告知客户端新的服务器地址  哨兵搭建配置redis-sentinel.conf 12345678910# 哨兵服务断开port 26379# 监控的主机地址 端口 超过几">
+<meta name="description" content="哨兵的作用监控Master存活检测 Slave存活检测  通知当被监控的主服务器出现问题时，向其他哨兵，客户端发送通知  自动故障转移断开Master与Slave的连接 投票选取新的Master 连接Slave到新的Master 告知客户端新的服务器地址  哨兵搭建配置redis-sentinel.conf 12345678910# 哨兵服务端口port 26379# 监控的主机地址 端口 超过几">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Redis之哨兵模式">
 <meta property="og:url" content="https://beginc.github.io/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Codeband">
-<meta property="og:description" content="哨兵的作用监控Master存活检测 Slave存活检测  通知当被监控的主服务器出现问题时，向其他哨兵，客户端发送通知  自动故障转移断开Master与Slave的连接 投票选取新的Master 连接Slave到新的Master 告知客户端新的服务器地址  哨兵搭建配置redis-sentinel.conf 12345678910# 哨兵服务断开port 26379# 监控的主机地址 端口 超过几">
+<meta property="og:description" content="哨兵的作用监控Master存活检测 Slave存活检测  通知当被监控的主服务器出现问题时，向其他哨兵，客户端发送通知  自动故障转移断开Master与Slave的连接 投票选取新的Master 连接Slave到新的Master 告知客户端新的服务器地址  哨兵搭建配置redis-sentinel.conf 12345678910# 哨兵服务端口port 26379# 监控的主机地址 端口 超过几">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="https://beginc.github.io/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/cover.png">
 <meta property="article:published_time" content="2020-03-02T07:48:21.000Z">
-<meta property="article:modified_time" content="2020-03-02T10:26:54.031Z">
+<meta property="article:modified_time" content="2020-03-11T09:58:43.838Z">
 <meta property="article:author" content="Codeband">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://beginc.github.io/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/post/%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B9%8B%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/cover.png">
@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="/theme.f900399fe578e73464e4.css">
 
 
-<script src="/config.7e3aafd952973ea1724a.js"></script>
+<script src="/config.17ab5fc6ac871af38497.js"></script>
 
 
 <meta name="generator" content="Hexo 4.2.0"></head>
